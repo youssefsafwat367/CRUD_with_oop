@@ -2,7 +2,7 @@
 class Validation
 {
     // to check if the method is post or get
-    function sanitize($method)
+     public function sanitize($method)
     {
         if ($method == "POST") {
             return true;
@@ -11,7 +11,7 @@ class Validation
         }
     }
     //to check if we write in inputs and remove white spaces 
-    function check_written($value)
+    public function check_written($value)
     {
         if (isset($value)) {
             return true;
@@ -20,7 +20,7 @@ class Validation
         }
     }
     //redirect function  
-    function redirect($path)
+    public function redirect($path)
     {
         return header("location:$path");
     }
@@ -113,7 +113,7 @@ class Validation
         }
     }
     // get user id function 
-    function get_id($hostname, $username, $password, $database, $table_name,  $email)
+    public function get_id($hostname, $username, $password, $database, $table_name,  $email)
     {
         $conn = mysqli_connect($hostname, $username, $password, $database);
         if (!$conn) {
@@ -126,7 +126,7 @@ class Validation
         return $id;
     }
     // get users function 
-    function get_users($hostname, $username, $password, $database, $table_name)
+    public function get_users($hostname, $username, $password, $database, $table_name)
     {
         $conn = mysqli_connect($hostname, $username, $password, $database);
         if (!$conn) {
@@ -138,7 +138,7 @@ class Validation
         return $res;
     }
     // get user name function 
-    function get_name($hostname, $username, $password, $database, $table_name, $email)
+    public function get_name($hostname, $username, $password, $database, $table_name, $email)
     {
         $conn = mysqli_connect($hostname, $username, $password, $database);
         if (!$conn) {
